@@ -1,0 +1,143 @@
+/* ---------------------------
+   Global Styles
+---------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+h1, h2, h3 {
+  color: #222;
+}
+
+/* ---------------------------
+   Header & Navigation (Flexbox)
+---------------------------- */
+.site-header {
+  background-color: #0078d4;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;              /* Flexbox used here */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------
+   Main Layout (CSS Grid)
+---------------------------- */
+.main-grid {
+  display: grid;               /* Grid used here */
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #eaeaea;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Content */
+.content {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* ---------------------------
+   Flexbox Cards inside Content
+---------------------------- */
+.card-container {
+  display: flex;               /* Flexbox for 1D layout */
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 1 30%;
+  background-color: #ffffff;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* ---------------------------
+   Footer
+---------------------------- */
+.site-footer {
+  background-color: #0078d4;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* ---------------------------
+   Responsive Design (Media Queries)
+---------------------------- */
+
+/* Tablet View */
+@media (max-width: 900px) {
+  .main-grid {
+    grid-template-columns: 1fr;  /* Stack sidebar and content */
+  }
+
+  .card-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex: 1 1 45%;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
+
+  .main-grid {
+    padding: 1rem;
+  }
+}
